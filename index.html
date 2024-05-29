@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Alerta de Chamada</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-messaging.js"></script>
 </head>
 <body>
     <h1>Solicitar Alerta</h1>
@@ -13,24 +15,7 @@
         <button type="submit">Enviar Alerta</button>
     </form>
 
-    <script>
-        document.getElementById('alertForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const doctorName = document.getElementById('doctorName').value;
-            const subject = document.getElementById('subject').value;
-
-            fetch('/alert', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ doctorName, subject })
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data.message);
-            });
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
+
